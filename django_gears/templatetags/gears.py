@@ -29,7 +29,7 @@ class AssetTagNode(Node):
 
     def render(self, context):
         logical_path = self.logical_path.resolve(context)
-        if self.debug or GEARS_DEBUG:
+        if GEARS_DEBUG:
             asset = build_asset(environment, logical_path)
             paths = (('%s?body=1&v=%s' % (r.attributes.logical_path, r.mtime))\
                 for r in asset.requirements)
